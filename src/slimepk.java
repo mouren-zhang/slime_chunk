@@ -1,8 +1,7 @@
 import java.util.Random;
 import java.util.*;
 import java.io.*;
-import java.io.File;
-//           ?下面这一行的【slimepk】一定要与文件名一致
+
 public class slimepk {
     public static void main(String[] args) throws Exception{
 
@@ -16,7 +15,6 @@ public class slimepk {
             }
         }
 
-        // File f = new File("Slime" + i + ".csv");
         file.createNewFile();
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         PrintStream PrintStream = new PrintStream(fileOutputStream);
@@ -62,7 +60,8 @@ public class slimepk {
 
 
         System.out.println(",,,,,版本1.0,by：bilibili[某人-张]");
-        System.out.println(",,,,,查询的种子为,"+seed);
+        //用单引号解决用表格读取时，种子被科学计数法替换
+        System.out.println(",,,,,查询的种子为,'"+seed);
         while (x<=x_max){
             while (z<=z_max){
                 for (int a=0;a<ax;a++){
