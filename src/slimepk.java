@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.*;
 import java.io.*;
 import java.io.File;
-//           â¬‡ä¸‹é¢è¿™ä¸€è¡Œçš„ã€slimepkã€‘ä¸€å®šè¦ä¸æ–‡ä»¶åä¸€è‡´
+//           ?ÏÂÃæÕâÒ»ĞĞµÄ¡¾slimepk¡¿Ò»¶¨ÒªÓëÎÄ¼şÃûÒ»ÖÂ
 public class slimepk {
     public static void main(String[] args) throws Exception{
 
@@ -16,9 +16,9 @@ public class slimepk {
             }
         }
 
-        File f = new File("Slime" + i + ".csv");
-        f.createNewFile();
-        FileOutputStream fileOutputStream = new FileOutputStream(f);
+        // File f = new File("Slime" + i + ".csv");
+        file.createNewFile();
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
         PrintStream PrintStream = new PrintStream(fileOutputStream);
         System.setOut(PrintStream);
 
@@ -55,14 +55,14 @@ public class slimepk {
         int yes_max_z=0;
 
 
-        //è¿™é‡ŒæŒ‡å®šè¾“å‡ºçš„èŒƒå›´ä¾‹å¦‚12*12çš„åŒºå—æœ‰å¤šå°‘
+        //ÕâÀïÖ¸¶¨Êä³öµÄ·¶Î§ÀıÈç12*12µÄÇø¿éÓĞ¶àÉÙ
         int ax = 12;
         int az = 12;
 
 
 
-        System.out.println(",,,,,ç‰ˆæœ¬1.0,byï¼šbilibili[æŸäºº-å¼ ]");
-        System.out.println(",,,,,æŸ¥è¯¢çš„ç§å­ä¸º,"+seed);
+        System.out.println(",,,,,°æ±¾1.0,by£ºbilibili[Ä³ÈË-ÕÅ]");
+        System.out.println(",,,,,²éÑ¯µÄÖÖ×ÓÎª,"+seed);
         while (x<=x_max){
             while (z<=z_max){
                 for (int a=0;a<ax;a++){
@@ -83,7 +83,7 @@ public class slimepk {
                     z=z-az;
                 }
                 x=x-ax;
-                System.out.println(x*16+","+z*16+",æœ‰,"+yes);
+                System.out.println(x*16+","+z*16+",ÓĞ,"+yes);
                 yes = 0;
                 z++;
             }
