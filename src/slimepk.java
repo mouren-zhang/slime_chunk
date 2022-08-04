@@ -52,12 +52,9 @@ public class slimepk {
         int yes_max_x=0;
         int yes_max_z=0;
 
-
         //这里指定输出的范围例如12*12的区块有多少
         int ax = 12;
         int az = 12;
-
-
 
         System.out.println(",,,,,版本1.0,by：bilibili[某人-张],2到7的值会被抛弃，用以优化存储");
         //用单引号解决用表格读取时，种子被科学计数法替换
