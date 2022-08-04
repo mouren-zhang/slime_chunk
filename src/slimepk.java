@@ -59,7 +59,7 @@ public class slimepk {
 
 
 
-        System.out.println(",,,,,版本1.0,by：bilibili[某人-张]");
+        System.out.println(",,,,,版本1.0,by：bilibili[某人-张],2到7的值会被抛弃，用以优化存储");
         //用单引号解决用表格读取时，种子被科学计数法替换
         System.out.println(",,,,,查询的种子为,'"+seed);
         while (x<=x_max){
@@ -82,7 +82,10 @@ public class slimepk {
                     z=z-az;
                 }
                 x=x-ax;
-                System.out.println(x*16+","+z*16+",有,"+yes);
+                if (yes<2||yes>7){
+                    System.out.println(x*16+","+z*16+","+yes);
+                }
+                
                 yes = 0;
                 z++;
             }
