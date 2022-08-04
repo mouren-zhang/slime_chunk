@@ -55,13 +55,13 @@ public class slimepk {
         int yes_max_z=0;
 
 
-        //这里指定输出的范围例如8*8的区块有多少
-        int ax = 8;
-        int az = 8;
+        //这里指定输出的范围例如12*12的区块有多少
+        int ax = 12;
+        int az = 12;
 
 
 
-        System.out.println(",,,,,版本1.0,by：bilibili[mouren_zhang]");
+        System.out.println(",,,,,版本1.0,by：bilibili[某人-张]");
         System.out.println(",,,,,查询的种子为,"+seed);
         while (x<=x_max){
             while (z<=z_max){
