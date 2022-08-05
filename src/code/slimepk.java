@@ -56,9 +56,9 @@ public class slimepk {
         int ax = 12;
         int az = 12;
 
-        System.out.println(",,,,,版本1.0,by：bilibili[某人-张],2到7的值会被抛弃，用以优化存储");
-        //用单引号解决用表格读取时，种子被科学计数法替换
-        System.out.println(",,,,,查询的种子为,'"+seed);
+        System.out.println("0,0,0,版本,by,seed,区域");
+        System.out.println("0,0,0,1.1,bilibili[某人-张],'"+seed+",'"+ax+"X"+az);
+
         while (x<=x_max){
             while (z<=z_max){
                 for (int a=0;a<ax;a++){
