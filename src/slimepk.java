@@ -6,11 +6,11 @@ public class slimepk {
     public static void main(String[] args) throws Exception {
         //*读配置文件
         //ini文件的存放位置
-        String filepath = "config.ini";
+        String filepath = "./src/config.ini";
         //创建文件输入流
         FileInputStream fis = new FileInputStream(filepath);
         //创建文件输出流
-//        OutputStream opt = null;
+        //OutputStream opt = null;
         //创建Properties属性对象用来接收ini文件中的属性
         Properties pps = new Properties();
         //从文件流中加载属性
@@ -21,10 +21,6 @@ public class slimepk {
         int z = Integer.parseInt(pps.getProperty("zs"));
         int x_max = Integer.parseInt(pps.getProperty("xm"));
         int z_max = Integer.parseInt(pps.getProperty("zm"));
-
-
-
-
 
         //*坐标格式化
         //x最小值
