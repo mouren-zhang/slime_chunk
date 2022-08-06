@@ -3,70 +3,63 @@ import java.util.*;
 import java.io.*;
 
 public class slimepk {
-    public static void main(String[] args) throws Exception {
-        //*¶ÁÅäÖÃÎÄ¼ş
-        //iniÎÄ¼şµÄ´æ·ÅÎ»ÖÃ
+    public static void main(String[] args) throws Exception{
+        //è¯»é…ç½®æ–‡ä»¶
         String filepath = "./src/config.ini";
-        //´´½¨ÎÄ¼şÊäÈëÁ÷
+        //åˆ›å»ºæ–‡ä»¶è¾“å…¥æµ
         FileInputStream fis = new FileInputStream(filepath);
-        //´´½¨ÎÄ¼şÊä³öÁ÷
-        //OutputStream opt = null;
-        //´´½¨PropertiesÊôĞÔ¶ÔÏóÓÃÀ´½ÓÊÕiniÎÄ¼şÖĞµÄÊôĞÔ
+//        åˆ›å»ºPropertieså±æ€§å¯¹è±¡ç”¨æ¥æ¥å—iniæ–‡ä»¶ä¸­çš„å±æ€§
         Properties pps = new Properties();
-        //´ÓÎÄ¼şÁ÷ÖĞ¼ÓÔØÊôĞÔ
+//        ä»æ–‡ä»¶æµä¸­åŠ è½½å±æ€§
         pps.load(fis);
-        //Í¨¹ıgetProperty("ÊôĞÔÃû")»ñÈ¡key¶ÔÓ¦µÄÖµ²¢¸³Öµ
-        long seed = Long.parseLong(pps.getProperty("seed"));
-        int x = Integer.parseInt(pps.getProperty("xs"));
-        int z = Integer.parseInt(pps.getProperty("zs"));
-        int x_max = Integer.parseInt(pps.getProperty("xm"));
-        int z_max = Integer.parseInt(pps.getProperty("zm"));
+        //é€šè¿‡getProperty("å±æ€§å")è·å–keyå¯¹åº”çš„å€¼å¹¶èµ‹å€¼
 
-        //*×ø±ê¸ñÊ½»¯
-        //x×îĞ¡Öµ
+        long seed = Long.parseLong(pps.getProperty("seed"));
+        int x = Integer.parseInt(pps.getProperty("x_min"));
+        int z = Integer.parseInt(pps.getProperty("z_min"));
+        int x_max = Integer.parseInt(pps.getProperty("x_max"));
+        int z_max = Integer.parseInt(pps.getProperty("z_max"));
+
+        //*åæ ‡æ ¼å¼åŒ–
+        //xæœ€å°å€¼
         x = x / 16;
         if (x < 0) {
             x--;
         }
-        //z×îĞ¡Öµ
+        //zæœ€å°å€¼
         z = z / 16;
         if (z < 0) {
             z--;
         }
-        //x×î´óÖµ
+        //xæœ€å¤§å€¼
         x_max = x_max / 16;
         if (x_max < 0) {
             x_max--;
         }
-        //z×î´óÖµ
+        //zæœ€å¤§å€¼
         z_max = z_max / 16;
         if (z_max < 0) {
             z_max--;
         }
 
-
-        //*ÆäËû²ÎÊı
-        //Ê·À³Ä·Çø¿éÊıÁ¿
+        //*å…¶ä»–å‚æ•°
+        //å²è±å§†åŒºå—æ•°é‡
         int yes = 0;
-        //zÖáÇøÓòÍ£Ö¹×ø±ê
+        //zè½´åŒºåŸŸåœæ­¢åæ ‡
         int z_stop = z;
-        //ÕâÀïÖ¸¶¨Êä³öµÄ·¶Î§ÀıÈç12*12µÄÇø¿éÓĞ¶àÉÙ
+        //è¿™é‡ŒæŒ‡å®šè¾“å‡ºçš„èŒƒå›´ä¾‹å¦‚12*12çš„åŒºå—æœ‰å¤šå°‘
         int ax = 12;
         int az = 12;
 
-        //ÓÃÓÚ¿ØÖÆ¿ØÖÆÌ¨Êä³öµÄÆµÂÊ
-        //Í³¼ÆÖµ
+        //ç”¨äºæ§åˆ¶æ§åˆ¶å°è¾“å‡ºçš„é¢‘ç‡
+        //ç»Ÿè®¡å€¼
         int pr_a = 0;
-        //ÆµÂÊ(Ã¿¼ÆËãx´Î¿ØÖÆÌ¨Êä³ö1´Î)
+        //é¢‘ç‡(æ¯è®¡ç®—xæ¬¡æ§åˆ¶å°è¾“å‡º1æ¬¡)
         int pr_stop = 500;
 
-        //Êä³ö×÷ÕßĞÅÏ¢
-        System.out.println("0,0,0,°æ±¾,×÷Õß,ÖÖ×Ó,ÆäËûËµÃ÷");
-        System.out.println("0,0,0,'2.0,[bilibili]Ä³ÈË-ÕÅ,'" + seed+",ÈçÓĞÎÊÌâ¿É¼°Ê±·´À¡");
+        System.out.println("æ­£åœ¨è¿è¡Œè„šæœ¬");
 
-
-
-         //csvÎÄ¼şÊÇ·ñ´æÔÚ
+        //csvæ–‡ä»¶æ˜¯å¦å­˜åœ¨
         File file = new File("Slime.csv");
         int i = 1;
         while (file.exists() ) {
@@ -75,7 +68,7 @@ public class slimepk {
         }
 
 
-//        ´ò¿ªcsvÎÄ¼ş
+//        æ‰“å¼€csvæ–‡ä»¶
         BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file,true)));
 
 
@@ -103,9 +96,9 @@ public class slimepk {
                     z = z - az;
                 }
                 x = x - ax;
-//                Ğ´ÈëÎÄ¼ş
+//                å†™å…¥æ–‡ä»¶
                 out.write(x * 16 + "," + z * 16 + "," + yes+"\r\n");
-                //¶¨Ê±Êä³öÒ»¸ö½á¹û£¬·ÀÖ¹ÓÃ»§ÈÏÎª½Å±¾¼ÙËÀ
+                //å®šæ—¶è¾“å‡ºä¸€ä¸ªç»“æœï¼Œé˜²æ­¢ç”¨æˆ·è®¤ä¸ºè„šæœ¬å‡æ­»
                 if (pr_a >= pr_stop) {
                     System.out.println(x * 16 + "," + z * 16 + "," + yes);
                     pr_a = 0;
@@ -118,8 +111,10 @@ public class slimepk {
             x++;
             z = z_stop;
         }
-//        ¹Ø±ÕÎÄ¼ş
+//        å…³é—­æ–‡ä»¶
         out.close();
+
+
 
     }
 }
